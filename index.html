@@ -7,10 +7,11 @@
   <style>
     :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; --ink:#f5f5f8; --muted:#aaa9b3; --surface:#09090b; --chip:#26262b; --accent:#b784e5; }
     * { box-sizing:border-box; }
-    body { margin:0; min-height:100dvh; display:grid; place-items:center; background:#15151b; color:var(--ink); }
+    html,body { width:100%; height:100%; }
+    body { margin:0; background:#09090b; color:var(--ink); }
     button,input { font:inherit; }
     button { cursor:pointer; }
-    .hud { position:relative; width:min(100%,460px); height:min(900px,100dvh); min-height:480px; display:flex; flex-direction:column; overflow:hidden; background:var(--surface); border:1px solid #3c3945; border-radius:25px; box-shadow:0 25px 70px #0009; }
+    .hud { position:relative; width:100%; height:100vh; height:100dvh; display:flex; flex-direction:column; overflow:hidden; background:var(--surface); }
     .top { position:relative; z-index:1; flex:none; padding:22px 13px 13px; background:var(--surface); }
     .search { height:53px; display:flex; align-items:center; gap:12px; padding:0 17px; background:#242428; border-radius:28px; }
     .search svg { width:20px; height:20px; flex:none; stroke:#dedde5; }
@@ -62,7 +63,6 @@
     .interested { width:100%; padding:14px; background:#9456c5; color:white; border:0; border-radius:13px; font-weight:800; }
     .toast { position:absolute; z-index:5; bottom:72px; left:50%; transform:translateX(-50%); padding:10px 15px; border-radius:15px; background:#34313b; color:white; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .2s; }
     .toast.show { opacity:1; }
-    @media(max-width:500px) { .hud { height:100dvh; border:0; border-radius:0; } }
   </style>
 </head>
 <body>
